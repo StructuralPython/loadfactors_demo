@@ -13,5 +13,5 @@ from loadfactors.loadfactors import (
     factored_min_trace,
     get_factored_matrix,
     factor_load,
-    alias_to_service_loads
+    alias_to_service_loads,
 )
