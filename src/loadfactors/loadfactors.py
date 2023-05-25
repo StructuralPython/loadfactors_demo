@@ -1,6 +1,8 @@
-from typing import NamedTuple, Any
+from typing import NamedTuple, Any, Union
 import json
+import pathlib
 import numpy as np
+
 
 class Load(NamedTuple):
     """
@@ -32,12 +34,12 @@ L2 = Load( # A load with array values
 )
 
 
-def open_load_combinations(filename='NBCC_vec.json') -> dict:
+def open_load_combinations(filename: Union[str, pathlib.Path]) -> dict:
     """
     Returns a dict representing the load combinations contained
     in 'filename'.
     """
-    with open('NBCC_vec.json', 'r') as json_file:
+    with open(filename, 'r') as json_file:
         nbcc_vec = json.load(json_file)
     return nbcc_vec
 
